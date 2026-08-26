@@ -1,0 +1,106 @@
+---
+import "../styles/global.css";
+import info from "../../info.json";
+import design from "../../design.json";
+import sestreLogo from "../assets/sestre_logo.png";
+import ProductModal from "../components/ProductModal";
+import { buildDesignVars } from "../utils/design";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const seo = info.seo;
+const site = info.site;
+const { title = seo.suggested_title, description = seo.suggested_description } =
+  Astro.props;
+
+const vars = buildDesignVars(design);
+
+const cssVarsString = Object.entries(vars)
+  .map(([key, value]) => `${key}:${value}`)
+  .join(";");
+
+const canonical = new URL(import.meta.env.BASE_URL, import.meta.env.SITE).href;
+const ogImage = new URL(sestreLogo.src, import.meta.env.SITE).href;
+---
+
+<!doctype html>
+<html lang="es" style={cssVarsString}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" href={sestreLogo.src} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content={site.brand} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+
+    <ProductModal client:only="react" />
+
+    <script>
+      import { productsById } from "../utils/products";
+
+      document.addEventListener("click", (event) => {
+        const target = (event.target as HTMLElement).closest<HTMLElement>(
+          "[data-open-product]",
+        );
+
+        if (!target) return;
+
+        const id = target.getAttribute("data-open-product");
+
+        if (!id) return;
+
+        const product = productsById.get(id);
+
+        if (!product) return;
+
+        event.preventDefault();
+        window.dispatchEvent(
+          new CustomEvent("sestre:open-product", { detail: product }),
+        );
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+
+        const target = (event.target as HTMLElement).closest<HTMLElement>(
+          "[data-open-product]",
+        );
+
+        if (!target) return;
+
+        const id = target.getAttribute("data-open-product");
+
+        if (!id) return;
+
+        const product = productsById.get(id);
+
+        if (!product) return;
+
+        event.preventDefault();
+        window.dispatchEvent(
+          new CustomEvent("sestre:open-product", { detail: product }),
+        );
+      });
+    </script>
+  </body>
+</html>

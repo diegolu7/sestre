@@ -1,0 +1,446 @@
+{
+  "site": {
+    "brand": "Sestre",
+    "logo_text": "SESTRE",
+    "logo_subtext": "INDUMENTARIA",
+    "business_type": "Showroom de indumentaria femenina plus size",
+    "positioning": "Moda femenina plus size actual, cómoda y con estilo",
+    "target_audience": "Mujeres que buscan prendas modernas en talles amplios",
+    "locations": [
+      "Embarcación",
+      "Salta"
+    ],
+    "facebook": "https://www.facebook.com/Sestretienda",
+    "instagram": "https://www.instagram.com/sestre.indumentaria/",
+    "whatsapp": "+5493878254198",
+    "content_tone": [
+      "femenino",
+      "cercano",
+      "moderno",
+      "elegante",
+      "inclusivo"
+    ],
+    "communication_principles": [
+      "Priorizar estilo y producto antes que el talle",
+      "Comunicar claramente que se trabaja con talles amplios",
+      "Evitar expresiones negativas relacionadas con el cuerpo",
+      "Facilitar la consulta de medidas y calce por WhatsApp",
+      "Mostrar prendas sobre cuerpos representativos del público objetivo"
+    ]
+  },
+  "desktop": {
+    "header": {
+      "logo": {
+        "text": "SESTRE",
+        "subtext": "INDUMENTARIA"
+      },
+      "navigation": [
+        "Inicio",
+        "Catálogo",
+        "Nuevos ingresos",
+        "Guía de talles",
+        "Cómo comprar",
+        "Contacto"
+      ],
+      "cta": {
+        "text": "Consultar por WhatsApp",
+        "type": "whatsapp"
+      }
+    },
+    "hero": {
+      "eyebrow": "INDUMENTARIA FEMENINA PLUS SIZE",
+      "title": "Vestite como te gusta",
+      "subtitle": "Prendas actuales, cómodas y con estilo en talles amplios.",
+      "location_text": "Encontranos en Embarcación y Salta.",
+      "primary_cta": {
+        "text": "Ver colección",
+        "icon": "arrow-right",
+        "target": "#catalogo"
+      },
+      "secondary_cta": {
+        "text": "Consultar mi talle",
+        "icon": "whatsapp",
+        "target": "whatsapp"
+      },
+      "visual_direction": {
+        "model": "Mujer plus size",
+        "style": "Natural, moderna y segura",
+        "objective": "Representar de forma realista al público de Sestre"
+      }
+    },
+    "benefits": {
+      "items": [
+        {
+          "title": "Talles amplios",
+          "description": "Prendas seleccionadas pensando en diferentes cuerpos y calces.",
+          "icon": "hanger"
+        },
+        {
+          "title": "Te ayudamos con tu talle",
+          "description": "Consultanos medidas y calce antes de elegir.",
+          "icon": "ruler"
+        },
+        {
+          "title": "Embarcación y Salta",
+          "description": "Consultá disponibilidad y opciones de entrega.",
+          "icon": "location"
+        }
+      ]
+    },
+    "new_arrivals": {
+      "eyebrow": "LO ÚLTIMO",
+      "title": "Nuevos ingresos",
+      "description": "Descubrí las prendas que acaban de llegar a Sestre.",
+      "type": "horizontal_carousel",
+      "items_visible": 5,
+      "item_badge": "Nuevo",
+      "navigation": {
+        "previous": true,
+        "next": true
+      },
+      "product_card_information": [
+        "imagen",
+        "nombre",
+        "precio",
+        "talles disponibles",
+        "botón consultar"
+      ]
+    },
+    "catalog": {
+      "eyebrow": "ENCONTRÁ TU ESTILO",
+      "title": "Nuestra colección",
+      "description": "Prendas para sentirte cómoda y verte increíble todos los días.",
+      "view_all": "Ver todo el catálogo →",
+      "filters": [
+        "Todos",
+        "Remeras y tops",
+        "Camisas",
+        "Pantalones",
+        "Vestidos",
+        "Abrigos"
+      ],
+      "size_information": {
+        "title": "Talles disponibles",
+        "note": "El rango exacto debe completarse con los talles reales comercializados por Sestre.",
+        "show_measurements": true,
+        "size_guide_available": true
+      },
+      "products": [
+        {
+          "name": "Blazer Lino",
+          "price": "$52.900",
+          "sizes": "Consultar talles disponibles",
+          "fit_information": "Consultar medidas y calce",
+          "cta": "Consultar por WhatsApp"
+        },
+        {
+          "name": "Top Morley",
+          "price": "$15.900",
+          "sizes": "Consultar talles disponibles",
+          "fit_information": "Consultar medidas y calce",
+          "cta": "Consultar por WhatsApp"
+        },
+        {
+          "name": "Pantalón Sastrero",
+          "price": "$39.900",
+          "sizes": "Consultar talles disponibles",
+          "fit_information": "Consultar cintura, cadera y largo",
+          "cta": "Consultar por WhatsApp"
+        },
+        {
+          "name": "Camisa Oversize",
+          "price": "$29.900",
+          "sizes": "Consultar talles disponibles",
+          "fit_information": "Consultar medidas y calce",
+          "cta": "Consultar por WhatsApp"
+        },
+        {
+          "name": "Vestido Cruzado",
+          "price": "$45.900",
+          "sizes": "Consultar talles disponibles",
+          "fit_information": "Consultar busto, cintura y largo",
+          "cta": "Consultar por WhatsApp"
+        },
+        {
+          "name": "Short Lino",
+          "price": "$22.900",
+          "sizes": "Consultar talles disponibles",
+          "fit_information": "Consultar cintura y cadera",
+          "cta": "Consultar por WhatsApp"
+        }
+      ]
+    },
+    "size_guide": {
+      "eyebrow": "ENCONTRÁ TU TALLE",
+      "title": "Elegí tu talle con confianza",
+      "description": "Cada prenda puede tener un calce diferente. Por eso te mostramos sus medidas y también podemos asesorarte personalmente antes de comprar.",
+      "features": [
+        {
+          "title": "Revisá las medidas",
+          "description": "Consultá las medidas disponibles de cada prenda."
+        },
+        {
+          "title": "Compará con una prenda tuya",
+          "description": "Usá una prenda que te quede bien como referencia."
+        },
+        {
+          "title": "Preguntanos",
+          "description": "Si tenés dudas, escribinos y te ayudamos a elegir."
+        }
+      ],
+      "cta": {
+        "text": "Consultar mi talle",
+        "type": "whatsapp"
+      }
+    },
+    "brand_message": {
+      "eyebrow": "SESTRE",
+      "title": "Moda que acompaña tu cuerpo, no al revés",
+      "description": "Seleccionamos prendas actuales y versátiles en talles amplios para que puedas encontrar opciones que representen tu estilo.",
+      "visual": "Modelo plus size utilizando prendas reales de Sestre"
+    },
+    "how_to_buy": {
+      "eyebrow": "SIMPLE Y RÁPIDO",
+      "title": "Cómo comprar",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Elegí tus prendas",
+          "description": "Recorré nuestra colección y guardá las prendas que más te gusten."
+        },
+        {
+          "number": 2,
+          "title": "Consultanos",
+          "description": "Escribinos por WhatsApp para confirmar stock, talle y medidas."
+        },
+        {
+          "number": 3,
+          "title": "Coordinamos tu compra",
+          "description": "Confirmamos tu pedido, forma de pago y entrega."
+        }
+      ]
+    },
+    "whatsapp_cta": {
+      "title": "¿No sabés qué talle elegir?",
+      "description": "Escribinos. Podemos ayudarte con las medidas y el calce de cada prenda.",
+      "cta": {
+        "text": "Consultar por WhatsApp",
+        "icon": "whatsapp"
+      }
+    },
+    "contact_strip": {
+      "items": [
+        {
+          "title": "Embarcación y Salta",
+          "description": "Consultá disponibilidad y opciones de entrega.",
+          "icon": "location"
+        },
+        {
+          "title": "Seguinos en Instagram",
+          "description": "@sestre.showroom",
+          "icon": "instagram"
+        },
+        {
+          "title": "¿Dudas con tu talle?",
+          "description": "Te asesoramos personalmente por WhatsApp.",
+          "icon": "whatsapp"
+        }
+      ]
+    },
+    "footer": {
+      "brand": {
+        "name": "Sestre Showroom",
+        "description": "Indumentaria femenina plus size en Embarcación y Salta."
+      },
+      "navigation": {
+        "title": "Navegación",
+        "links": [
+          "Inicio",
+          "Catálogo",
+          "Nuevos ingresos",
+          "Guía de talles",
+          "Cómo comprar",
+          "Contacto"
+        ]
+      },
+      "contact": {
+        "title": "Contacto",
+        "whatsapp": "WhatsApp: +54 9 387 123-4567",
+        "location": "Embarcación y Salta, Argentina",
+        "instagram": "@sestre.showroom"
+      },
+      "copyright": "© 2026 Sestre Showroom. Todos los derechos reservados."
+    }
+  },
+  "mobile": {
+    "header": {
+      "left": {
+        "type": "hamburger_menu"
+      },
+      "center": {
+        "logo": "SESTRE",
+        "logo_subtext": "INDUMENTARIA"
+      },
+      "right": {
+        "type": "whatsapp_icon"
+      },
+      "desktop_navigation_hidden": true
+    },
+    "hero": {
+      "image_position": "top",
+      "eyebrow": "INDUMENTARIA FEMENINA PLUS SIZE",
+      "title": "Vestite como te gusta",
+      "subtitle": "Prendas actuales, cómodas y con estilo en talles amplios.",
+      "location_text": "Embarcación y Salta",
+      "primary_cta": {
+        "text": "Ver colección",
+        "width": "full"
+      },
+      "secondary_cta": {
+        "text": "Consultar mi talle",
+        "width": "full",
+        "type": "whatsapp"
+      }
+    },
+    "benefits": {
+      "layout": "horizontal_or_3_columns",
+      "items": [
+        {
+          "title": "Talles amplios",
+          "icon": "hanger"
+        },
+        {
+          "title": "Asesoramiento de talle",
+          "icon": "ruler"
+        },
+        {
+          "title": "Embarcación y Salta",
+          "icon": "location"
+        }
+      ]
+    },
+    "new_arrivals": {
+      "eyebrow": "LO ÚLTIMO",
+      "title": "Nuevos ingresos",
+      "layout": "horizontal carousel",
+      "badge": "Nuevo",
+      "interaction": "swipe"
+    },
+    "catalog": {
+      "eyebrow": "ENCONTRÁ TU ESTILO",
+      "title": "Nuestra colección",
+      "view_all": "Ver todo →",
+      "layout": "2 columns",
+      "product_card": {
+        "show": [
+          "image",
+          "name",
+          "price",
+          "talles",
+          "consult_button"
+        ],
+        "cta": "Consultar"
+      }
+    },
+    "size_guide": {
+      "title": "¿Cuál es mi talle?",
+      "description": "Consultá las medidas de cada prenda o escribinos y te ayudamos a elegir.",
+      "cta": "Consultar mi talle"
+    },
+    "how_to_buy": {
+      "title": "Cómo comprar",
+      "layout": "vertical",
+      "steps": [
+        "Elegí tus prendas",
+        "Consultá talle y stock",
+        "Coordinamos tu compra"
+      ]
+    },
+    "sticky_bottom_navigation": {
+      "position": "fixed-bottom",
+      "items": [
+        {
+          "title": "WhatsApp",
+          "subtitle": "Consultanos",
+          "icon": "whatsapp"
+        },
+        {
+          "title": "Instagram",
+          "subtitle": "@sestre.showroom",
+          "icon": "instagram"
+        }
+      ]
+    }
+  },
+  "responsive_differences": [
+    {
+      "element": "Header",
+      "desktop": "Logo + navegación completa + CTA WhatsApp",
+      "mobile": "Hamburger + logo centrado + acceso directo a WhatsApp"
+    },
+    {
+      "element": "Hero",
+      "desktop": "Copy y CTA a la izquierda con modelo plus size protagonista a la derecha",
+      "mobile": "Modelo primero y contenido inmediatamente debajo"
+    },
+    {
+      "element": "Catálogo",
+      "desktop": "Grid amplio de productos",
+      "mobile": "Grid de dos columnas"
+    },
+    {
+      "element": "Nuevos ingresos",
+      "desktop": "Carrusel controlado mediante flechas",
+      "mobile": "Carrusel horizontal mediante swipe"
+    },
+    {
+      "element": "Guía de talles",
+      "desktop": "Sección explicativa completa",
+      "mobile": "Versión resumida con CTA directo a WhatsApp"
+    },
+    {
+      "element": "Contacto",
+      "desktop": "CTA y bloque de contacto dentro del flujo de la página",
+      "mobile": "WhatsApp e Instagram siempre disponibles mediante barra fija inferior"
+    }
+  ],
+  "section_order": {
+    "desktop": [
+      "Header",
+      "Hero",
+      "Benefits",
+      "Nuevos ingresos",
+      "Catálogo",
+      "Guía de talles",
+      "Brand message",
+      "Cómo comprar",
+      "WhatsApp CTA",
+      "Contact strip",
+      "Footer"
+    ],
+    "mobile": [
+      "Header",
+      "Hero",
+      "Benefits",
+      "Nuevos ingresos",
+      "Catálogo",
+      "Guía de talles",
+      "Brand message",
+      "Cómo comprar",
+      "Footer",
+      "Sticky bottom navigation"
+    ]
+  },
+  "seo": {
+    "primary_topic": "Indumentaria femenina plus size",
+    "secondary_topics": [
+      "Ropa plus size",
+      "Moda en talles grandes",
+      "Indumentaria femenina en Salta",
+      "Ropa plus size en Salta",
+      "Ropa femenina en Embarcación"
+    ],
+    "suggested_title": "Sestre | Indumentaria femenina plus size en Salta",
+    "suggested_description": "Descubrí Sestre, indumentaria femenina plus size con prendas modernas y talles amplios. Encontranos en Embarcación y Salta."
+  }
+}

@@ -1,0 +1,47 @@
+---
+import info from "../../info.json";
+import { createGenericWhatsAppUrl } from "../utils/whatsapp";
+import WhatsAppIcon from "./icons/WhatsAppIcon.astro";
+import { Instagram } from "lucide-react";
+
+const items = info.mobile.sticky_bottom_navigation.items;
+const site = info.site;
+
+const links: Record<string, string | undefined> = {
+  whatsapp: createGenericWhatsAppUrl("Hola, Sestre. Tengo una consulta."),
+  instagram: site.instagram,
+};
+
+const icons: Record<string, any> = {
+  whatsapp: WhatsAppIcon,
+  instagram: Instagram,
+};
+---
+
+<div
+  class="fixed inset-x-0 bottom-0 z-40 border-t border-morado-100 bg-white lg:hidden"
+  style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+>
+  <nav
+    class="grid grid-cols-2"
+    aria-label="Accesos rápidos"
+  >
+    {items.map((item) => {
+      const Icon = icons[item.icon] ?? Instagram;
+      const href = links[item.icon];
+
+      return (
+        <a
+          key={item.title}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex min-h-[64px] flex-col items-center justify-center gap-1 border-r border-morado-100 last:border-r-0 text-morado-900 transition-colors duration-180 ease-out hover:text-morado-500"
+        >
+          <Icon size={22} strokeWidth={1.8} />
+          <span class="text-[11px] font-semibold">{item.title}</span>
+        </a>
+      );
+    })}
+  </nav>
+</div>

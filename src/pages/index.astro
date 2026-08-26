@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Benefits from "../components/Benefits.astro";
+import NewArrivals from "../components/NewArrivals.astro";
+import Catalog from "../components/Catalog.astro";
+import BrandMessage from "../components/BrandMessage.astro";
+import HowToBuy from "../components/HowToBuy.astro";
+import WhatsAppCTA from "../components/WhatsAppCTA.astro";
+import ContactStrip from "../components/ContactStrip.astro";
+import Footer from "../components/Footer.astro";
+import MobileBottomNav from "../components/MobileBottomNav.astro";
+---
+
+<Layout>
+  <Header />
+  <main>
+    <Hero />
+    <Benefits />
+    <NewArrivals />
+    <Catalog />
+    <BrandMessage />
+    <HowToBuy />
+    <WhatsAppCTA />
+    <ContactStrip />
+  </main>
+  <Footer />
+
+  <div class="h-16 lg:hidden" aria-hidden="true"></div>
+  <MobileBottomNav />
+</Layout>

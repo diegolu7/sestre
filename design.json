@@ -1,0 +1,518 @@
+{
+  "meta": {
+    "proyecto": "Sestre Showroom — Indumentaria femenina",
+    "fuente": "Captura de pantalla (vista desktop + mobile)",
+    "metodologia": "Los colores se extrajeron muestreando píxeles reales de la imagen (no a ojo), por lo que los hex son de alta fidelidad. Las familias tipográficas son la coincidencia visual más cercana (no hay metadata de fuente en un raster). Tamaños en px y algunos espaciados son proporciones estimadas sobre el mockup.",
+    "confianza": {
+      "colores": "alta — muestreo de píxeles directo",
+      "tipografia_familias": "media — coincidencia visual de letterforms, verificar en el proyecto real",
+      "tamanos_y_espaciados": "media — proporciones estimadas, ajustar tras primer render"
+    }
+  },
+  "colores": {
+    "escala_morado": {
+      "morado-50": {
+        "hex": "#FBF9FC",
+        "uso": "Fondo general de página y fondo de tarjetas de producto"
+      },
+      "morado-100": {
+        "hex": "#F1E6F9",
+        "uso": "Fondos claros: badge 'Nuevo', círculos de íconos, franja de info, fondo botón WhatsApp del header, botón WhatsApp flotante mobile"
+      },
+      "morado-200": {
+        "hex": "#E2D6F3",
+        "uso": "Fondo del botón 'Consultar' dentro de las tarjetas de catálogo"
+      },
+      "morado-300": {
+        "hex": "#CAB3E0",
+        "uso": "Bordes: botón secundario outline, flechas del carrusel"
+      },
+      "morado-400": {
+        "hex": "#AD8AD6",
+        "uso": "Íconos de línea decorativos (fila de features debajo de los botones hero)"
+      },
+      "morado-500": {
+        "hex": "#A473CF",
+        "uso": "PRIMARIO — fondo botón 'Ver prendas', texto de acento 'Embarcación y Salta', link 'Ver todo el catálogo', ícono del círculo 'Cómo comprar', subrayado del nav activo"
+      },
+      "morado-600": {
+        "hex": "#8B5FC0",
+        "uso": "Hover/estado activo del primario (inferido, no visible en captura estática)"
+      },
+      "morado-700": {
+        "hex": "#5E3992",
+        "uso": "Íconos con más contraste — franja inferior (pin de ubicación, Instagram, WhatsApp)"
+      },
+      "morado-900": {
+        "hex": "#371C58",
+        "uso": "Tinta oscura de marca — texto del badge 'Nuevo', texto e ícono del botón 'Consultar', ícono WhatsApp del botón secundario y del flotante mobile, títulos de 'Cómo comprar', encabezados de columna del footer, links del nav"
+      }
+    },
+    "neutros": {
+      "negro-display": {
+        "hex": "#000000",
+        "uso": "Título hero serif 'Sestre Showroom', encabezados de sección sans-serif ('Catálogo', 'Nuevos ingresos', 'Cómo comprar'), nombre de producto, precio"
+      },
+      "gris-secundario": {
+        "hex": "#6E5D7B",
+        "uso": "Texto de cuerpo secundario — labels de features, talles (S · M · L), descripciones de pasos, texto de footer, copyright"
+      },
+      "blanco": {
+        "hex": "#FFFFFF",
+        "uso": "Texto sobre botón primario, fondo de tarjetas, fondo del header"
+      }
+    },
+    "fondos_seccion": {
+      "pagina": "#FBF9FC",
+      "header": "#FFFFFF",
+      "tarjeta_producto": "#FFFFFF",
+      "franja_info": "#F1E4F9",
+      "footer": "#EAD9F6"
+    },
+    "gradientes": {
+      "blob_decorativo_hero": {
+        "tipo": "mancha orgánica/irregular tipo acuarela detrás de la foto del modelo, no un gradiente lineal clásico",
+        "color_centro": "#F3E8F8",
+        "color_borde": "rgba(243,232,248,0)",
+        "direccion": "radial desde el centro, difuminado hacia afuera hasta fundirse con el blanco de fondo",
+        "ilustracion_lineal_superpuesta": {
+          "descripcion": "hojas/ramas botánicas dibujadas en línea fina sobre el blob",
+          "color_trazo": "#C9A8E0",
+          "grosor": "1-1.5px"
+        }
+      }
+    },
+    "estados": {
+      "boton_primario": {
+        "normal": {
+          "fondo": "#A473CF",
+          "texto": "#FFFFFF"
+        },
+        "hover": {
+          "fondo": "#8B5FC0",
+          "texto": "#FFFFFF",
+          "nota": "inferido — oscurecido ~12% respecto al normal"
+        },
+        "activo": {
+          "fondo": "#7A4FAE",
+          "texto": "#FFFFFF",
+          "nota": "inferido"
+        }
+      },
+      "boton_secundario_outline": {
+        "normal": {
+          "fondo": "#FBF9FC",
+          "borde": "#CAB3E0",
+          "texto": "#371C58"
+        },
+        "hover": {
+          "fondo": "#F1E6F9",
+          "borde": "#A473CF",
+          "texto": "#371C58",
+          "nota": "inferido"
+        }
+      },
+      "boton_consultar_tarjeta": {
+        "normal": {
+          "fondo": "#E2D6F3",
+          "texto": "#371C58"
+        },
+        "hover": {
+          "fondo": "#D3BEEA",
+          "texto": "#371C58",
+          "nota": "inferido"
+        }
+      },
+      "nav_link": {
+        "normal": {
+          "texto": "#371C58"
+        },
+        "activo": {
+          "texto": "#A473CF",
+          "subrayado": "#A473CF"
+        },
+        "hover": {
+          "texto": "#A473CF",
+          "nota": "inferido"
+        }
+      },
+      "input_deshabilitado_inferido": {
+        "fondo": "#F3F1F5",
+        "borde": "#DDD5E2",
+        "texto": "#A9A0B2",
+        "nota": "no observado; propuesto por consistencia con la paleta"
+      }
+    }
+  },
+  "tipografia": {
+    "familias": {
+      "serif_display": {
+        "font": "Playfair Display",
+        "alternativas": [
+          "Cormorant Garamond",
+          "Prata",
+          "Marcellus"
+        ],
+        "uso": "Exclusiva del título hero 'Sestre Showroom' y el wordmark 'SESTRE' del logo",
+        "confianza": "media — coincidencia visual, no confirmada"
+      },
+      "sans_ui": {
+        "font": "Poppins",
+        "alternativas": [
+          "Jost",
+          "Urbanist",
+          "Outfit"
+        ],
+        "uso": "Todo el resto: nav, botones, párrafos, precios, badges, footer",
+        "confianza": "media — coincidencia visual, no confirmada"
+      }
+    },
+    "niveles": {
+      "hero_titulo": {
+        "font": "serif_display",
+        "size": "56px",
+        "weight": 600,
+        "lineHeight": "1.08",
+        "color": "negro-display"
+      },
+      "logo_wordmark": {
+        "font": "serif_display",
+        "size": "20px",
+        "weight": 700,
+        "letterSpacing": "0.5px",
+        "textTransform": "uppercase",
+        "color": "negro-display"
+      },
+      "logo_tagline": {
+        "font": "sans_ui",
+        "size": "9px",
+        "weight": 500,
+        "letterSpacing": "1.5px",
+        "textTransform": "uppercase",
+        "color": "gris-secundario"
+      },
+      "seccion_titulo": {
+        "font": "sans_ui",
+        "size": "27px",
+        "weight": 700,
+        "lineHeight": "1.2",
+        "color": "negro-display"
+      },
+      "hero_subtitulo": {
+        "font": "sans_ui",
+        "size": "19px",
+        "weight": 400,
+        "lineHeight": "1.4",
+        "color": "negro-display"
+      },
+      "hero_acento": {
+        "font": "sans_ui",
+        "size": "19px",
+        "weight": 600,
+        "lineHeight": "1.4",
+        "color": "morado-500",
+        "extra": "subrayado decorativo curvo debajo, trazo morado-300"
+      },
+      "nav_link": {
+        "font": "sans_ui",
+        "size": "15px",
+        "weight": 500,
+        "color": "morado-900"
+      },
+      "boton_texto": {
+        "font": "sans_ui",
+        "size": "15px",
+        "weight": 600,
+        "letterSpacing": "0.1px"
+      },
+      "producto_nombre": {
+        "font": "sans_ui",
+        "size": "16px",
+        "weight": 700,
+        "color": "negro-display"
+      },
+      "producto_precio": {
+        "font": "sans_ui",
+        "size": "15px",
+        "weight": 700,
+        "color": "negro-display"
+      },
+      "producto_talles": {
+        "font": "sans_ui",
+        "size": "12.5px",
+        "weight": 500,
+        "letterSpacing": "0.5px",
+        "color": "gris-secundario"
+      },
+      "badge_texto": {
+        "font": "sans_ui",
+        "size": "11px",
+        "weight": 600,
+        "color": "morado-900"
+      },
+      "feature_label": {
+        "font": "sans_ui",
+        "size": "13.5px",
+        "weight": 500,
+        "color": "gris-secundario"
+      },
+      "paso_titulo": {
+        "font": "sans_ui",
+        "size": "17px",
+        "weight": 700,
+        "color": "morado-900"
+      },
+      "paso_descripcion": {
+        "font": "sans_ui",
+        "size": "14px",
+        "weight": 400,
+        "lineHeight": "1.5",
+        "color": "gris-secundario"
+      },
+      "infobar_titulo": {
+        "font": "sans_ui",
+        "size": "15.5px",
+        "weight": 700,
+        "color": "morado-900"
+      },
+      "infobar_descripcion": {
+        "font": "sans_ui",
+        "size": "13px",
+        "weight": 400,
+        "color": "gris-secundario"
+      },
+      "footer_heading": {
+        "font": "sans_ui",
+        "size": "15px",
+        "weight": 700,
+        "color": "morado-900"
+      },
+      "footer_link": {
+        "font": "sans_ui",
+        "size": "13.5px",
+        "weight": 400,
+        "lineHeight": "1.9",
+        "color": "gris-secundario"
+      },
+      "footer_copyright": {
+        "font": "sans_ui",
+        "size": "12.5px",
+        "weight": 400,
+        "color": "gris-secundario"
+      },
+      "link_acento": {
+        "font": "sans_ui",
+        "size": "13.5px",
+        "weight": 600,
+        "color": "morado-500"
+      }
+    }
+  },
+  "efectos": {
+    "sombras": {
+      "tarjeta_producto": "none",
+      "boton": "none",
+      "hover_tarjeta": "0 10px 24px rgba(164,115,207,0.18)",
+      "hover_boton": "0 6px 16px rgba(164,115,207,0.25)",
+      "nota": "El diseño observado es plano/minimal, sin sombra visible en estado estático. Los valores de hover son una recomendación de implementación (teñidos de morado, no negros), no algo observado en la captura."
+    },
+    "borderRadius": {
+      "boton_grande": "12px",
+      "boton_chico_o_pill": "9999px",
+      "tarjeta_imagen": "14px",
+      "badge": "8px",
+      "circulo_icono": "9999px",
+      "contenedor_card": "16px",
+      "nota": "Se detecta un único radio base (~12px a escala del mockup) reutilizado en todos los botones. En elementos bajos (badge, botón 'Consultar' de tarjeta, WhatsApp flotante mobile) ese mismo radio se percibe como 'pill' por la proporción alto/ancho, no porque use un valor distinto."
+    },
+    "hover": {
+      "botones": {
+        "transform": "none",
+        "transition": "background-color 180ms ease, border-color 180ms ease"
+      },
+      "tarjetas": {
+        "transform": "translateY(-2px)",
+        "transition": "transform 200ms ease, box-shadow 200ms ease",
+        "nota": "inferido, no observado"
+      }
+    },
+    "bordes": {
+      "grosor_estandar": "1.5px",
+      "estilo": "solid",
+      "conector_pasos_como_comprar": "dashed, 1.5px, color morado-300"
+    }
+  },
+  "componentes": {
+    "tarjeta_producto_catalogo": {
+      "estructura": [
+        "imagen (radio superior 14px, aspect-ratio ~3:4)",
+        "padding interno 14-16px",
+        "producto_nombre",
+        "producto_precio",
+        "producto_talles",
+        "boton_consultar_tarjeta (margin-top 10px)"
+      ],
+      "fondo": "#FFFFFF",
+      "sombra": "none",
+      "gap_entre_tarjetas": "20px"
+    },
+    "tarjeta_nuevo_ingreso": {
+      "estructura": [
+        "imagen (radio 14px, aspect-ratio ~3:4)",
+        "badge_nuevo posicionado absolute, top 10px / left 10px"
+      ],
+      "restriccion": "NO lleva nombre, precio ni botón debajo — solo imagen + badge. No confundir con tarjeta_producto_catalogo.",
+      "gap_entre_tarjetas": "18px"
+    },
+    "badge_nuevo": {
+      "fondo": "morado-100",
+      "texto": "morado-900",
+      "padding": "4px 10px",
+      "borderRadius": "8px",
+      "size_texto": "11px",
+      "weight": 600
+    },
+    "boton_primario": {
+      "fondo": "morado-500",
+      "texto": "#FFFFFF",
+      "padding": "13px 28px",
+      "borderRadius": "12px",
+      "altura_aprox": "44px",
+      "icono": "flecha derecha, solo en el CTA 'Ver prendas'"
+    },
+    "boton_secundario_outline": {
+      "fondo": "morado-50",
+      "borde": "1.5px solid morado-300",
+      "texto": "morado-900",
+      "icono_whatsapp": "morado-900",
+      "padding": "13px 24px",
+      "borderRadius": "12px"
+    },
+    "boton_consultar_tarjeta": {
+      "fondo": "morado-200",
+      "texto": "morado-900",
+      "icono_whatsapp": "morado-900",
+      "padding": "9px 16px",
+      "borderRadius": "9999px",
+      "ancho": "100% del contenedor de la tarjeta"
+    },
+    "fila_features_hero": {
+      "restriccion": "los íconos (corazón, medalla, camión) NO tienen círculo de fondo — son solo trazo/línea color morado-400 junto al texto",
+      "tamano_icono": "18px",
+      "gap_icono_texto": "6px",
+      "gap_entre_items": "28px"
+    },
+    "circulo_paso_como_comprar": {
+      "fondo": "morado-100",
+      "icono": "morado-500, trazo (stroke), 26px",
+      "diametro": "64px"
+    },
+    "flecha_carrusel": {
+      "fondo": "#FFFFFF",
+      "borde": "1.5px solid morado-300",
+      "icono": "morado-900",
+      "diametro": "36px",
+      "borderRadius": "9999px"
+    },
+    "nav_bar": {
+      "fondo": "#FFFFFF",
+      "altura": "76px",
+      "distribucion": "logo (izquierda) — links (centro) — botón WhatsApp (derecha)",
+      "link_activo": "subrayado morado-500, 2px, offset 6px"
+    },
+    "footer": {
+      "fondo": "#EAD9F6",
+      "columnas": [
+        "logo + descripción de marca",
+        "Navegación (links)",
+        "Contacto (WhatsApp, dirección, Instagram)"
+      ],
+      "copyright_bar": {
+        "borde_superior": "1px solid rgba(55,28,88,0.15)",
+        "align": "center",
+        "padding_vertical": "20px"
+      }
+    },
+    "boton_whatsapp_flotante_mobile": {
+      "fondo": "morado-100",
+      "icono": "morado-900",
+      "diametro": "44px",
+      "borderRadius": "9999px",
+      "posicion": "fixed, top-right del header"
+    }
+  },
+  "espaciado": {
+    "contenedor": {
+      "max_width": "1240px",
+      "padding_lateral_desktop": "72px",
+      "padding_lateral_mobile": "20px"
+    },
+    "seccion": {
+      "padding_vertical_desktop": "56px",
+      "padding_vertical_mobile": "36px"
+    },
+    "grid_catalogo": {
+      "columnas_desktop": 6,
+      "columnas_tablet": 3,
+      "columnas_mobile": 2,
+      "gap": "20px"
+    },
+    "grid_nuevos_ingresos": {
+      "tipo": "scroll horizontal / carrusel",
+      "visibles_desktop": 5,
+      "visibles_mobile": "2.3 (scroll)",
+      "gap": "18px"
+    },
+    "grid_como_comprar": {
+      "columnas_desktop": 3,
+      "columnas_mobile": 1,
+      "gap": "32px",
+      "conector": "línea punteada entre pasos, oculta en mobile"
+    },
+    "grid_footer": {
+      "columnas_desktop": 3,
+      "columnas_mobile": 1,
+      "gap": "40px"
+    },
+    "interno_tarjeta": "16px",
+    "gap_grupo_botones": "12px"
+  },
+  "layout_responsive": {
+    "breakpoints": {
+      "mobile": "<768px",
+      "tablet": "768-1023px",
+      "desktop": "≥1024px"
+    },
+    "header": {
+      "desktop": "logo + nav horizontal completo + botón 'Consultar por WhatsApp'",
+      "mobile": "ícono hamburguesa (izq) + logo centrado + botón WhatsApp circular flotante (der)"
+    },
+    "hero": {
+      "desktop": "2 columnas — texto a la izquierda, foto a la derecha",
+      "mobile": "1 columna apilada — foto primero (arriba), luego título/subtítulo/botones centrados"
+    },
+    "catalogo": {
+      "desktop": "grid de 6 columnas",
+      "mobile": "grid de 2 columnas"
+    },
+    "nuevos_ingresos": {
+      "desktop": "5 tarjetas visibles + flechas de navegación",
+      "mobile": "scroll horizontal sin flechas"
+    },
+    "franja_info": {
+      "desktop": "3 columnas en fila",
+      "mobile": "2 columnas simplificadas (WhatsApp / Instagram)"
+    }
+  },
+  "restricciones": [
+    "No usar morado-500 (ni ningún morado saturado) como fondo grande de tarjeta o sección: los fondos son siempre blanco, casi-blanco (morado-50) o morado clarísimo (morado-100). El morado saturado es exclusivo de botón primario, texto de acento e íconos puntuales.",
+    "No aplicar #000000 puro a texto de cuerpo o descripciones: reservarlo solo para el título hero y los encabezados de sección (H2, nombre de producto, precio). El resto del texto oscuro usa morado-900 o gris-secundario.",
+    "No mezclar tipografías: la serif es exclusiva del título hero y el wordmark del logo. Todo lo demás (nav, botones, precios, párrafos) es sans-serif.",
+    "No usar sombras oscuras tipo 'rgba(0,0,0,0.3)' en tarjetas o botones: el diseño es plano; si se agrega sombra en hover debe ser sutil y teñida de morado.",
+    "No confundir la tarjeta de 'Nuevos ingresos' (solo imagen + badge) con la de 'Catálogo' (imagen + nombre + precio + talles + botón): no agregarles precio o botón a las de nuevos ingresos.",
+    "No usar esquinas cuadradas (radius 0) ni bordes gruesos (>2px): todo el sistema usa esquinas redondeadas (~12-14px) o círculo completo.",
+    "No introducir colores fuera de la familia morado/lavanda + negro + gris-morado + blanco (nada de azules, verdes o rosados saturados que no aparecen en la captura).",
+    "Los íconos deben ser de trazo fino (outline/line-icon), no rellenos sólidos, salvo el glifo propio de la marca WhatsApp.",
+    "El botón primario ('Ver prendas') es el único elemento con fondo morado sólido y texto blanco; todos los demás botones usan fondo claro con texto/ícono oscuro (morado-900)."
+  ]
+}

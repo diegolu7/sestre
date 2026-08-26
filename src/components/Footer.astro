@@ -1,0 +1,76 @@
+---
+import info from "../../info.json";
+import sestreLogo from "../assets/sestre_logo.png";
+import { footerNavLinks } from "../utils/navigation";
+import { createGenericWhatsAppUrl } from "../utils/whatsapp";
+
+const footer = info.desktop.footer;
+const site = info.site;
+const whatsappUrl = createGenericWhatsAppUrl("Hola, Sestre. Tengo una consulta.");
+---
+
+<footer class="bg-bg-footer">
+  <div class="container-sestre py-12">
+    <div class="grid gap-10 md:grid-cols-3">
+      <div class="flex flex-col items-start gap-3">
+        <img src={sestreLogo.src} alt="Sestre" class="h-12 w-auto" width={220} height={48} />
+        <p class="max-w-xs text-[13.5px] leading-relaxed text-muted">
+          {footer.brand.description}
+        </p>
+      </div>
+
+      <nav aria-label="Navegación del pie de página">
+        <h3 class="text-[15px] font-bold text-morado-900">
+          {footer.navigation.title}
+        </h3>
+        <ul class="mt-4 space-y-1">
+          {footerNavLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="text-[13.5px] leading-[1.9] text-muted transition-colors duration-180 ease-out hover:text-morado-500"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <div>
+        <h3 class="text-[15px] font-bold text-morado-900">
+          {footer.contact.title}
+        </h3>
+        <ul class="mt-4 space-y-2 text-[13.5px] leading-relaxed text-muted">
+          <li>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="transition-colors duration-180 ease-out hover:text-morado-500"
+            >
+              {footer.contact.whatsapp}
+            </a>
+          </li>
+          <li>{footer.contact.location}</li>
+          <li>
+            <a
+              href={site.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="transition-colors duration-180 ease-out hover:text-morado-500"
+            >
+              {footer.contact.instagram}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-morado-900/15">
+    <p class="container-sestre py-5 text-center text-[12.5px] text-muted">
+      {footer.copyright}
+    </p>
+  </div>
+</footer>

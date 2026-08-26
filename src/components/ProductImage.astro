@@ -1,0 +1,28 @@
+---
+import placeholder from "../assets/placeholder.png";
+import { isBlankImage, withBase } from "../utils/assets";
+
+interface Props {
+  image?: string;
+  alt: string;
+  loading?: "eager" | "lazy";
+  class?: string;
+}
+
+const { image, alt, loading = "lazy", class: className = "" } = Astro.props;
+
+const fallback = placeholder.src;
+const src = isBlankImage(image) ? fallback : withBase(image as string);
+const onError = isBlankImage(image)
+  ? undefined
+  : `this.onerror=null;this.src='${fallback}'`;
+---
+
+<img
+  src={src}
+  alt={alt}
+  loading={loading}
+  onerror={onError}
+  class={className}
+  decoding="async"
+/>

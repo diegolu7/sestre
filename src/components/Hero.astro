@@ -1,0 +1,83 @@
+---
+import info from "../../info.json";
+import backgroundHero from "../assets/background_hero.png";
+import mujerHero from "../assets/mujer_hero.png";
+import WhatsAppIcon from "./icons/WhatsAppIcon.astro";
+import { createGenericWhatsAppUrl } from "../utils/whatsapp";
+import { ArrowRight } from "lucide-react";
+
+const hero = info.desktop.hero;
+const whatsappUrl = createGenericWhatsAppUrl(
+  "Hola, Sestre. Quería consultar por mi talle.",
+);
+---
+
+<section id="inicio" class="relative overflow-hidden bg-white">
+  <div
+    class="container-sestre grid gap-8 py-10 md:py-12 lg:grid-cols-2 lg:items-center lg:py-14"
+  >
+    <div
+      class="relative mx-auto aspect-[4/5] w-full max-w-[360px] md:max-w-[520px] lg:order-last lg:mx-0 lg:max-w-[560px]"
+    >
+      <img
+        src={backgroundHero.src}
+        alt=""
+        aria-hidden="true"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        class="absolute inset-0 h-full w-full object-contain"
+      />
+      <img
+        src={mujerHero.src}
+        alt="Modelo de Sestre usando prendas plus size"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        class="absolute inset-0 z-10 h-full w-full object-contain"
+      />
+    </div>
+
+    <div class="lg:order-first">
+      <p
+        class="text-[12px] font-semibold uppercase tracking-[0.18em] text-morado-500"
+      >
+        {hero.eyebrow}
+      </p>
+
+      <h1
+        class="mt-3 font-serif-display text-[44px] font-semibold leading-[1.08] text-ink md:text-[56px]"
+      >
+        {hero.title}
+      </h1>
+
+      <p class="mt-4 max-w-md text-[19px] leading-relaxed text-ink">
+        {hero.subtitle}
+      </p>
+
+      <p class="mt-3 text-[19px] font-semibold leading-relaxed text-morado-500">
+        {hero.location_text}
+      </p>
+
+      <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+        <a
+          href={hero.primary_cta.target}
+          class="inline-flex min-h-11 items-center justify-center gap-2 rounded-btn bg-morado-500 px-7 py-3 text-[15px] font-semibold text-white transition-colors duration-180 ease-out hover:bg-morado-600"
+        >
+          {hero.primary_cta.text}
+          <ArrowRight size={18} strokeWidth={2} />
+        </a>
+
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex min-h-11 items-center justify-center gap-2 rounded-btn border-[1.5px] border-morado-300 bg-morado-50 px-6 py-3 text-[15px] font-semibold text-morado-900 transition-colors duration-180 ease-out hover:border-morado-500 hover:bg-morado-100"
+        >
+          <WhatsAppIcon size={18} />
+          {hero.secondary_cta.text}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

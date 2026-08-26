@@ -1,0 +1,67 @@
+---
+import type { Product } from "../types/product";
+import { createWhatsAppUrl } from "../utils/whatsapp";
+import ProductImage from "./ProductImage.astro";
+
+interface Props {
+  product: Product;
+  badgeText?: string;
+  loading?: "eager" | "lazy";
+}
+
+const { product, badgeText = "Nuevo", loading = "lazy" } = Astro.props;
+
+const sizesLabel = product.sizes?.length
+  ? `Talles: ${product.sizes.join(" · ")}`
+  : product.fit_information;
+---
+
+<div
+  class="group flex cursor-pointer flex-col overflow-hidden rounded-card bg-bg-card"
+  data-open-product={product.id}
+  role="button"
+  tabindex="0"
+  aria-haspopup="dialog"
+  aria-label={`Abrir detalle de ${product.name}`}
+>
+  <div class="relative overflow-hidden rounded-img">
+    <ProductImage
+      image={product.image}
+      alt={product.name}
+      loading={loading}
+      class="aspect-[3/4] w-full object-cover transition-transform duration-200 ease-out group-hover:scale-[1.03]"
+    />
+
+    {product.is_new && (
+      <span
+        class="absolute left-2.5 top-2.5 rounded-badge bg-morado-100 px-2.5 py-1 text-[11px] font-semibold text-morado-900"
+      >
+        {badgeText}
+      </span>
+    )}
+  </div>
+
+  <div class="flex flex-1 flex-col gap-1.5 p-4">
+    <h3 class="text-base font-bold text-ink">{product.name}</h3>
+
+    {product.price && (
+      <p class="text-[15px] font-bold text-ink">{product.price}</p>
+    )}
+
+    {sizesLabel && (
+      <p class="text-[12.5px] font-medium tracking-wide text-muted">
+        {sizesLabel}
+      </p>
+    )}
+
+    <a
+      href={createWhatsAppUrl(product)}
+      target="_blank"
+      rel="noopener noreferrer"
+      onclick="event.stopPropagation()"
+      class="mt-2.5 inline-flex w-full items-center justify-center gap-2 rounded-pill bg-morado-200 px-4 py-2 text-[13px] font-semibold text-morado-900 transition-colors duration-180 ease-out hover:bg-morado-300"
+    >
+      Consultar
+    </a>
+  </div>
+</div>

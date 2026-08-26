@@ -1,0 +1,83 @@
+---
+import info from "../../info.json";
+import { products } from "../utils/products";
+import ProductCard from "./ProductCard.astro";
+
+const section = info.desktop.catalog;
+const filters = section.filters ?? [];
+---
+
+<section id="catalogo" class="bg-bg-page">
+  <div class="container-sestre py-10 md:py-14">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <p class="text-[12px] font-semibold uppercase tracking-[0.18em] text-morado-500">
+          {section.eyebrow}
+        </p>
+        <h2 class="mt-2 text-[27px] font-bold leading-tight text-ink">
+          {section.title}
+        </h2>
+        <p class="mt-2 max-w-lg text-[15px] leading-relaxed text-muted">
+          {section.description}
+        </p>
+      </div>
+
+      <a
+        href="#catalogo"
+        class="hidden shrink-0 text-[13.5px] font-semibold text-morado-500 transition-colors duration-180 ease-out hover:text-morado-600 md:block"
+      >
+        {section.view_all}
+      </a>
+    </div>
+
+    {filters.length > 1 && (
+      <div
+        class="mt-7 flex flex-wrap gap-2"
+        role="group"
+        aria-label="Filtrar catálogo"
+      >
+        {filters.map((filter) => (
+          <button
+            key={filter}
+            type="button"
+            data-filter={filter}
+            aria-pressed={filter === "Todos"}
+            class="rounded-pill border border-morado-300 bg-white px-4 py-2 text-[13px] font-medium text-morado-900 transition-colors duration-180 ease-out hover:border-morado-500 hover:text-morado-500 data-[pressed=true]:border-morado-500 data-[pressed=true]:bg-morado-500 data-[pressed=true]:text-white"
+          >
+            {filter}
+          </button>
+        ))}
+      </div>
+    )}
+
+    <ul class="mt-8 grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-6">
+      {products.map((product) => (
+        <li
+          key={product.id}
+          data-catalog-item
+          data-category={product.category ?? ""}
+        >
+          <ProductCard product={product} />
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<script>
+  const chips = document.querySelectorAll<HTMLButtonElement>("[data-filter]");
+  const items = document.querySelectorAll<HTMLElement>("[data-catalog-item]");
+
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const value = chip.dataset.filter ?? "Todos";
+
+      chips.forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
+      items.forEach((item) => {
+        const match =
+          value === "Todos" || item.dataset.category === value;
+        item.classList.toggle("hidden", !match);
+      });
+    });
+  });
+</script>

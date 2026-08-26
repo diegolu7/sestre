@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "id": "blazer-lino",
+      "name": "Blazer Lino",
+      "price": "$52.900",
+      "fit_information": "Consultar medidas y calce",
+      "category": "Abrigos",
+      "is_new": true
+    },
+    {
+      "id": "top-morley",
+      "name": "Top Morley",
+      "price": "$15.900",
+      "fit_information": "Consultar medidas y calce",
+      "category": "Remeras y tops",
+      "is_new": false
+    },
+    {
+      "id": "pantalon-sastrero",
+      "name": "Pantalón Sastrero",
+      "price": "$39.900",
+      "fit_information": "Consultar cintura, cadera y largo",
+      "category": "Pantalones",
+      "is_new": false
+    },
+    {
+      "id": "camisa-oversize",
+      "name": "Camisa Oversize",
+      "price": "$29.900",
+      "fit_information": "Consultar medidas y calce",
+      "category": "Camisas",
+      "is_new": true
+    },
+    {
+      "id": "vestido-cruzado",
+      "name": "Vestido Cruzado",
+      "price": "$45.900",
+      "fit_information": "Consultar busto, cintura y largo",
+      "category": "Vestidos",
+      "is_new": true
+    },
+    {
+      "id": "short-lino",
+      "name": "Short Lino",
+      "price": "$22.900",
+      "fit_information": "Consultar cintura y cadera",
+      "category": "Pantalones",
+      "is_new": false
+    }
+  ]
+}

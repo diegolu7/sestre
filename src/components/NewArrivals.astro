@@ -1,0 +1,104 @@
+---
+import info from "../../info.json";
+import { newProducts } from "../utils/products";
+import ProductImage from "./ProductImage.astro";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const section = info.desktop.new_arrivals;
+const badgeText = section.item_badge ?? "Nuevo";
+---
+
+<section id="nuevos-ingresos" class="bg-white">
+  <div class="container-sestre py-10 md:py-14">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <p class="text-[12px] font-semibold uppercase tracking-[0.18em] text-morado-500">
+          {section.eyebrow}
+        </p>
+        <h2 class="mt-2 text-[27px] font-bold leading-tight text-ink">
+          {section.title}
+        </h2>
+        <p class="mt-2 max-w-lg text-[15px] leading-relaxed text-muted">
+          {section.description}
+        </p>
+      </div>
+
+      <div class="hidden shrink-0 gap-3 lg:flex">
+        <button
+          type="button"
+          data-nav-prev
+          aria-label="Anteriores"
+          class="flex h-9 w-9 items-center justify-center rounded-pill border-[1.5px] border-morado-300 bg-white text-morado-900 transition-colors duration-180 ease-out hover:border-morado-500 hover:text-morado-500"
+        >
+          <ChevronLeft size={18} />
+        </button>
+        <button
+          type="button"
+          data-nav-next
+          aria-label="Siguientes"
+          class="flex h-9 w-9 items-center justify-center rounded-pill border-[1.5px] border-morado-300 bg-white text-morado-900 transition-colors duration-180 ease-out hover:border-morado-500 hover:text-morado-500"
+        >
+          <ChevronRight size={18} />
+        </button>
+      </div>
+    </div>
+
+    {newProducts.length > 0 ? (
+      <ul
+        id="new-arrivals-track"
+        class="no-scrollbar mt-8 flex snap-x snap-mandatory gap-[18px] overflow-x-auto scroll-smooth lg:snap-none"
+      >
+        {newProducts.map((product) => (
+          <li
+            key={product.id}
+            class="w-[42%] shrink-0 snap-start sm:w-[30%] lg:w-[calc((100%-72px)/5)]"
+          >
+            <div
+              class="group relative cursor-pointer overflow-hidden rounded-img"
+              data-open-product={product.id}
+              role="button"
+              tabindex="0"
+              aria-haspopup="dialog"
+              aria-label={`Abrir detalle de ${product.name}`}
+            >
+              <ProductImage
+                image={product.image}
+                alt={product.name}
+                class="aspect-[3/4] w-full object-cover transition-transform duration-200 ease-out group-hover:scale-[1.03]"
+              />
+
+              <span
+                class="absolute left-2.5 top-2.5 rounded-badge bg-morado-100 px-2.5 py-1 text-[11px] font-semibold text-morado-900"
+              >
+                {badgeText}
+              </span>
+            </div>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="mt-8 text-muted">Próximamente nuevos ingresos.</p>
+    )}
+  </div>
+</section>
+
+<script>
+  const track = document.getElementById("new-arrivals-track");
+
+  if (track) {
+    const prev = document.querySelector<HTMLButtonElement>("[data-nav-prev]");
+    const next = document.querySelector<HTMLButtonElement>("[data-nav-next]");
+
+    const step = () => {
+      const first = track.querySelector("li");
+      return (first?.getBoundingClientRect().width ?? 220) + 18;
+    };
+
+    prev?.addEventListener("click", () =>
+      track.scrollBy({ left: -step(), behavior: "smooth" }),
+    );
+    next?.addEventListener("click", () =>
+      track.scrollBy({ left: step(), behavior: "smooth" }),
+    );
+  }
+</script>

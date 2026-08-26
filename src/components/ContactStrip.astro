@@ -1,0 +1,67 @@
+---
+import info from "../../info.json";
+import { createGenericWhatsAppUrl } from "../utils/whatsapp";
+import WhatsAppIcon from "./icons/WhatsAppIcon.astro";
+import { Instagram, MapPin } from "lucide-react";
+
+const items = info.desktop.contact_strip.items;
+const site = info.site;
+
+const icons: Record<string, any> = {
+  whatsapp: WhatsAppIcon,
+  instagram: Instagram,
+  location: MapPin,
+};
+
+const links: Record<string, string | undefined> = {
+  whatsapp: createGenericWhatsAppUrl("Hola, Sestre. Tengo una consulta."),
+  instagram: site.instagram,
+};
+---
+
+<section id="contacto" class="hidden bg-white lg:block">
+  <div class="container-sestre pb-14">
+    <ul class="grid grid-cols-3 gap-6 rounded-card bg-morado-50 px-8 py-8">
+      {items.map((item) => {
+        const Icon = icons[item.icon] ?? MapPin;
+        const href = links[item.icon];
+
+        const inner = (
+          <>
+            <span
+              class="flex h-12 w-12 shrink-0 items-center justify-center rounded-circle bg-morado-100 text-morado-700"
+            >
+              <Icon size={20} strokeWidth={1.8} />
+            </span>
+            <div class="flex flex-col gap-1">
+              <h3 class="text-[15.5px] font-bold text-morado-900">
+                {item.title}
+              </h3>
+              <p class="text-[13px] text-muted">{item.description}</p>
+            </div>
+          </>
+        );
+
+        const classes =
+          "flex items-center gap-4 transition-colors duration-180 ease-out";
+
+        return (
+          <li key={item.title}>
+            {href ? (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class={`${classes} hover:text-morado-500`}
+              >
+                {inner}
+              </a>
+            ) : (
+              <div class={classes}>{inner}</div>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+---
+import info from "../../info.json";
+import WhatsAppIcon from "./icons/WhatsAppIcon.astro";
+import { createGenericWhatsAppUrl } from "../utils/whatsapp";
+
+const content = info.desktop.whatsapp_cta;
+const whatsappUrl = createGenericWhatsAppUrl(
+  "Hola, Sestre. Quería consultar por un talle.",
+);
+---
+
+<section class="hidden bg-bg-page lg:block">
+  <div class="container-sestre pb-14">
+    <div class="flex flex-col items-center gap-5 rounded-card bg-morado-100 px-8 py-12 text-center">
+      <h2 class="max-w-xl text-[27px] font-bold leading-tight text-morado-900">
+        {content.title}
+      </h2>
+      <p class="max-w-xl text-[15px] leading-relaxed text-muted">
+        {content.description}
+      </p>
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex min-h-11 items-center justify-center gap-2 rounded-btn bg-morado-500 px-7 py-3 text-[15px] font-semibold text-white transition-colors duration-180 ease-out hover:bg-morado-600"
+      >
+        <WhatsAppIcon size={18} />
+        {content.cta.text}
+      </a>
+    </div>
+  </div>
+</section>

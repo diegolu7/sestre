@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-morado-50: var(--sestre-morado-50);
+  --color-morado-100: var(--sestre-morado-100);
+  --color-morado-200: var(--sestre-morado-200);
+  --color-morado-300: var(--sestre-morado-300);
+  --color-morado-400: var(--sestre-morado-400);
+  --color-morado-500: var(--sestre-morado-500);
+  --color-morado-600: var(--sestre-morado-600);
+  --color-morado-700: var(--sestre-morado-700);
+  --color-morado-900: var(--sestre-morado-900);
+
+  --color-ink: var(--sestre-ink);
+  --color-muted: var(--sestre-gray);
+  --color-white: var(--sestre-white);
+
+  --color-bg-page: var(--sestre-bg-page);
+  --color-bg-header: var(--sestre-bg-header);
+  --color-bg-card: var(--sestre-bg-card);
+  --color-bg-strip: var(--sestre-bg-strip);
+  --color-bg-footer: var(--sestre-bg-footer);
+
+  --font-sans: var(--sestre-font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif-display: var(--sestre-font-serif), ui-serif, Georgia, serif;
+
+  --radius-btn: var(--sestre-radius-btn);
+  --radius-pill: var(--sestre-radius-pill);
+  --radius-img: var(--sestre-radius-img);
+  --radius-badge: var(--sestre-radius-badge);
+  --radius-circle: var(--sestre-radius-circle);
+  --radius-card: var(--sestre-radius-card);
+
+  --shadow-hover-card: 0 10px 24px rgba(164, 115, 207, 0.18);
+  --shadow-hover-btn: 0 6px 16px rgba(164, 115, 207, 0.25);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg-page font-sans text-morado-900 antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-morado-200);
+    color: var(--color-morado-900);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-morado-500);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .container-sestre {
+    @apply mx-auto w-full max-w-[1240px] px-5 lg:px-[72px];
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

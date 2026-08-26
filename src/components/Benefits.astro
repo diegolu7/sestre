@@ -1,0 +1,46 @@
+---
+import info from "../../info.json";
+import { Shirt, Ruler, MapPin } from "lucide-react";
+
+const items = info.desktop.benefits.items;
+
+const icons: Record<string, any> = {
+  hanger: Shirt,
+  ruler: Ruler,
+  location: MapPin,
+};
+---
+
+<section class="bg-bg-page">
+  <div class="container-sestre py-8 md:py-10">
+    <ul class="grid grid-cols-3 gap-4 md:gap-6">
+      {items.map((item) => {
+        const Icon = icons[item.icon] ?? Ruler;
+
+        return (
+          <li
+            class="flex flex-col items-center gap-3 text-center md:flex-row md:items-start md:text-left"
+          >
+            <span
+              class="flex h-14 w-14 shrink-0 items-center justify-center rounded-circle bg-morado-100 text-morado-500"
+            >
+              <Icon size={22} strokeWidth={1.8} />
+            </span>
+
+            <div class="flex flex-col items-center gap-1 md:items-start">
+              <h3 class="text-[13.5px] font-medium leading-tight text-muted md:text-[15px] md:font-semibold md:text-ink">
+                {item.title}
+              </h3>
+
+              {item.description && (
+                <p class="hidden text-[13px] leading-snug text-muted md:block">
+                  {item.description}
+                </p>
+              )}
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</section>

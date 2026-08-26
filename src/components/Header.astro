@@ -1,0 +1,72 @@
+---
+import sestreLogo from "../assets/sestre_logo.png";
+import MobileMenu from "./MobileMenu";
+import WhatsAppIcon from "./icons/WhatsAppIcon.astro";
+import { desktopNavLinks } from "../utils/navigation";
+import { createGenericWhatsAppUrl } from "../utils/whatsapp";
+
+const whatsappUrl = createGenericWhatsAppUrl(
+  "Hola, Sestre. Quiero hacer una consulta.",
+);
+---
+
+<header class="sticky top-0 z-40 border-b border-morado-100 bg-bg-header">
+  <div class="container-sestre flex h-[76px] items-center justify-between">
+    <div class="flex items-center gap-3 lg:gap-8">
+      <div class="lg:hidden">
+        <MobileMenu links={desktopNavLinks} client:load />
+      </div>
+
+      <a
+        href="#inicio"
+        class="flex items-center"
+        aria-label="Sestre — Inicio"
+      >
+        <img
+          src={sestreLogo.src}
+          alt="Sestre"
+          class="h-10 w-auto"
+          width={200}
+          height={40}
+        />
+      </a>
+    </div>
+
+    <nav
+      class="hidden items-center gap-7 lg:flex"
+      aria-label="Navegación principal"
+    >
+      {desktopNavLinks.map((link) => (
+        <a
+          key={link.href}
+          href={link.href}
+          class="text-[15px] font-medium text-morado-900 transition-colors duration-180 ease-out hover:text-morado-500"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex items-center">
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden items-center gap-2 rounded-btn bg-morado-100 px-5 py-3 text-[15px] font-semibold text-morado-900 transition-colors duration-180 ease-out hover:bg-morado-200 lg:inline-flex"
+      >
+        <WhatsAppIcon size={18} />
+        Consultar por WhatsApp
+      </a>
+
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Consultar por WhatsApp"
+        class="flex h-11 w-11 items-center justify-center rounded-pill bg-morado-100 text-morado-900 transition-colors duration-180 ease-out hover:bg-morado-200 lg:hidden"
+      >
+        <WhatsAppIcon size={20} />
+      </a>
+    </div>
+  </div>
+</header>

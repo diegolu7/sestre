@@ -1,0 +1,21 @@
+---
+import info from "../../info.json";
+
+const content = info.desktop.brand_message;
+---
+
+<section class="bg-white">
+  <div class="container-sestre mx-auto max-w-3xl py-10 text-center md:py-14">
+    <p class="text-[12px] font-semibold uppercase tracking-[0.18em] text-morado-500">
+      {content.eyebrow}
+    </p>
+    <h2
+      class="mt-3 font-serif-display text-[28px] font-semibold leading-snug text-ink md:text-[36px]"
+    >
+      {content.title}
+    </h2>
+    <p class="mt-4 text-[15px] leading-relaxed text-muted">
+      {content.description}
+    </p>
+  </div>
+</section>
