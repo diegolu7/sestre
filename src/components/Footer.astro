@@ -1,8 +1,8 @@
 ---
 import info from "../../info.json";
-import sestreLogo from "../assets/sestre_logo.png";
+import sestreLogo from "../assets/sestre_logo_new.png";
 import { footerNavLinks } from "../utils/navigation";
-import { createGenericWhatsAppUrl } from "../utils/whatsapp";
+import { createGenericWhatsAppUrl, formatPhoneNumber } from "../utils/whatsapp";
 
 const footer = info.desktop.footer;
 const site = info.site;
@@ -49,7 +49,7 @@ const whatsappUrl = createGenericWhatsAppUrl("Hola, Sestre. Tengo una consulta."
               rel="noopener noreferrer"
               class="transition-colors duration-180 ease-out hover:text-morado-500"
             >
-              {footer.contact.whatsapp}
+              {`WhatsApp: ${formatPhoneNumber()}`}
             </a>
           </li>
           <li>{footer.contact.location}</li>

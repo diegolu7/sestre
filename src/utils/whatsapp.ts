@@ -11,6 +11,16 @@ export function siteWhatsAppNumber(): string {
   return sanitizePhone(site.whatsapp);
 }
 
+export function formatPhoneNumber(): string {
+  const digits = siteWhatsAppNumber();
+  const country = digits.slice(0, 2);
+  const mobile = digits[2] ?? "";
+  const area = digits.slice(3, 7);
+  const subscriber = digits.slice(7);
+  const split = `${subscriber.slice(0, 2)}-${subscriber.slice(2)}`;
+  return `+${country} ${mobile} ${area} ${split}`;
+}
+
 export function createWhatsAppMessage(
   product: Product,
   selectedSize?: string,

@@ -1,5 +1,5 @@
 ---
-import sestreLogo from "../assets/sestre_logo.png";
+import sestreLogo from "../assets/sestre_logo_new.png";
 import MobileMenu from "./MobileMenu";
 import WhatsAppIcon from "./icons/WhatsAppIcon.astro";
 import { desktopNavLinks } from "../utils/navigation";
@@ -12,25 +12,19 @@ const whatsappUrl = createGenericWhatsAppUrl(
 
 <header class="sticky top-0 z-40 border-b border-morado-100 bg-bg-header">
   <div class="container-sestre flex h-[76px] items-center justify-between">
-    <div class="flex items-center gap-3 lg:gap-8">
-      <div class="lg:hidden">
-        <MobileMenu links={desktopNavLinks} client:load />
-      </div>
-
-      <a
-        href="#inicio"
-        class="flex items-center"
-        aria-label="Sestre — Inicio"
-      >
-        <img
-          src={sestreLogo.src}
-          alt="Sestre"
-          class="h-10 w-auto"
-          width={200}
-          height={40}
-        />
-      </a>
-    </div>
+    <a
+      href="#inicio"
+      class="hidden items-center lg:flex"
+      aria-label="Sestre — Inicio"
+    >
+      <img
+        src={sestreLogo.src}
+        alt="Sestre"
+        class="h-14 w-auto"
+        width={174}
+        height={58}
+      />
+    </a>
 
     <nav
       class="hidden items-center gap-7 lg:flex"
@@ -47,15 +41,33 @@ const whatsappUrl = createGenericWhatsAppUrl(
       ))}
     </nav>
 
-    <div class="flex items-center">
+    <a
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hidden items-center gap-2 rounded-btn bg-morado-100 px-5 py-3 text-[15px] font-semibold text-morado-900 transition-colors duration-180 ease-out hover:bg-morado-200 lg:inline-flex"
+    >
+      <WhatsAppIcon size={18} />
+      Consultar por WhatsApp
+    </a>
+
+    <div class="grid w-full grid-cols-3 items-center lg:hidden">
+      <div class="justify-self-start">
+        <MobileMenu links={desktopNavLinks} client:load />
+      </div>
+
       <a
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hidden items-center gap-2 rounded-btn bg-morado-100 px-5 py-3 text-[15px] font-semibold text-morado-900 transition-colors duration-180 ease-out hover:bg-morado-200 lg:inline-flex"
+        href="#inicio"
+        class="flex items-center justify-self-center"
+        aria-label="Sestre — Inicio"
       >
-        <WhatsAppIcon size={18} />
-        Consultar por WhatsApp
+        <img
+          src={sestreLogo.src}
+          alt="Sestre"
+          class="h-9 w-auto"
+          width={110}
+          height={37}
+        />
       </a>
 
       <a
@@ -63,7 +75,7 @@ const whatsappUrl = createGenericWhatsAppUrl(
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Consultar por WhatsApp"
-        class="flex h-11 w-11 items-center justify-center rounded-pill bg-morado-100 text-morado-900 transition-colors duration-180 ease-out hover:bg-morado-200 lg:hidden"
+        class="flex h-11 w-11 items-center justify-center justify-self-end rounded-pill bg-morado-100 text-morado-900 transition-colors duration-180 ease-out hover:bg-morado-200"
       >
         <WhatsAppIcon size={20} />
       </a>

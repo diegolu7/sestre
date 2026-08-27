@@ -42,14 +42,16 @@ const sizesLabel = product.sizes?.length
   </div>
 
   <div class="flex flex-1 flex-col gap-1.5 p-4">
-    <h3 class="text-base font-bold text-ink">{product.name}</h3>
+    <h3 class="line-clamp-2 min-h-[2.4em] text-base font-bold leading-[1.2] text-ink">
+      {product.name}
+    </h3>
 
     {product.price && (
       <p class="text-[15px] font-bold text-ink">{product.price}</p>
     )}
 
     {sizesLabel && (
-      <p class="text-[12.5px] font-medium tracking-wide text-muted">
+      <p class="line-clamp-1 min-h-[1.25em] text-[12.5px] font-medium leading-[1.25] tracking-wide text-muted">
         {sizesLabel}
       </p>
     )}
